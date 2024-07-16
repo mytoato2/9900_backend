@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.model.domain.User">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userRole" column="userRole" jdbcType="INTEGER"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="userPassword" column="userPassword" jdbcType="VARCHAR"/>
+            <result property="zID" column="zID" jdbcType="VARCHAR"/>
+            <result property="groupName" column="groupName" jdbcType="VARCHAR"/>
+            <result property="preference" column="preference" jdbcType="VARCHAR"/>
+            <result property="company" column="company" jdbcType="VARCHAR"/>
+            <result property="jobTitle" column="jobTitle" jdbcType="VARCHAR"/>
+            <result property="avatarUrl" column="avatarUrl" jdbcType="VARCHAR"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userRole,username,
+        email,userPassword,zID,
+        groupName,preference,company,
+        jobTitle,avatarUrl,createTime,
+        isDelete
+    </sql>
+</mapper>
