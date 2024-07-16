@@ -1,0 +1,38 @@
+spring:
+  application:
+    name:user-platform
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+##本地测试使用下面这段
+    url: jdbc:mysql://localhost:3306/9900proj
+    username: root
+    password: 123456
+
+# docker用下面这段
+
+#    url: ${SPRING_DATASOURCE_URL}
+#    username: ${SPRING_DATASOURCE_USERNAME}
+#    password: ${SPRING_DATASOURCE_PASSWORD}
+
+    jpa:
+      hibernate:
+        ddl-auto: none
+
+#  设置一天过期
+  session:
+    timeout: 86400
+server:
+  port:
+    8080
+  servlet:
+    context-path: /api
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  mybatis-plus:
+    global-config:
+      db-config:
+        id-type: AUTO
+        logic-delete-field: isDelete # 全局逻辑删除字段名
+        logic-delete-value: 1 # 逻辑已删除值
+        logic-not-delete-value: 0 # 逻辑未删除值
